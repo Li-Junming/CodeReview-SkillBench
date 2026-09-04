@@ -32,4 +32,4 @@ packages = ["src/skillbench"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests/public", "backend/tests"]
-
+pythonpath = ["src"]
