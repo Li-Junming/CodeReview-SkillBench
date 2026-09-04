@@ -26,3 +26,8 @@ def test_public_case_contains_no_hidden_answer(public_root):
     ).lower()
     assert "answer_key" not in public_text
     assert "expected_finding" not in public_text
+
+
+def test_repository_preserves_frozen_text_bytes_across_platforms(public_root):
+    attributes = (public_root / ".gitattributes").read_text(encoding="utf-8")
+    assert "* text=auto eol=lf" in attributes

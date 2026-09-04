@@ -4,6 +4,7 @@ mode: allowlist
 default_action: deny
 
 allowed_now:
+  - .gitattributes
   - .gitignore
   - pyproject.toml
   - README.md
