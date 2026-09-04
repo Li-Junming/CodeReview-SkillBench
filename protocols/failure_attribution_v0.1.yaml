@@ -1,0 +1,19 @@
+schema_version: "0.1"
+name: first-real-deviation
+decision_order:
+  - signal: runner_ok
+    false_result: PLATFORM_ERROR
+    action: exclude_and_fix_runner
+  - signal: asset_ok
+    false_result: EVALUATION_ASSET
+    action: exclude_and_revise_testcase
+  - signal: skill_loaded
+    false_result: SKILL_EXECUTION
+    action: exclude_and_fix_skill_trigger_or_execution
+  - signal: evidence_sufficient
+    false_result: INCONCLUSIVE
+    action: do_not_score_and_collect_more_evidence
+  - signal: outcome_ok
+    false_result: VALID_MODEL_FAILURE
+    action: include_in_score_and_open_regression_task
+

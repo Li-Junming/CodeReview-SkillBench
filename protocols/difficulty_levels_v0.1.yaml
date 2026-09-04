@@ -1,0 +1,11 @@
+schema_version: "0.1"
+levels:
+  L1:
+    name: direct_detection
+    description: The defect is locally visible and requires one-step reasoning.
+  L2:
+    name: cross_context_reasoning
+    description: The defect requires connecting multiple functions, files, or states.
+  L3:
+    name: system_behavior_reasoning
+    description: The defect requires lifecycle, concurrency, security, or architectural reasoning.

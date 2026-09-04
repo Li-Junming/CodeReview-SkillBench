@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Li-Junming/CodeReview-SkillBench/schemas/judge_result.schema.json",
+  "title": "Judge Result",
+  "type": "object",
+  "required": ["assertion_id", "verdict", "reason", "evidence_refs"],
+  "properties": {
+    "assertion_id": {"type": "string", "minLength": 1},
+    "verdict": {"enum": ["PASS", "PARTIAL", "FAIL", "INCONCLUSIVE", "NOT_APPLICABLE"]},
+    "reason": {"type": "string", "minLength": 1},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}
+

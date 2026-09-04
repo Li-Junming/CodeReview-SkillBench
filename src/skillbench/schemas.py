@@ -1,0 +1,12 @@
+from __future__ import annotations
+
+
+VERDICTS = {"PASS", "PARTIAL", "FAIL", "INCONCLUSIVE", "NOT_APPLICABLE"}
+ROOT_CAUSES = {
+    "PLATFORM_ERROR",
+    "EVALUATION_ASSET",
+    "SKILL_EXECUTION",
+    "VALID_MODEL_FAILURE",
+    "INCONCLUSIVE",
+}
+

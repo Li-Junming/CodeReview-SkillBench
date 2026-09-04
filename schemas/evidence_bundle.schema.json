@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Li-Junming/CodeReview-SkillBench/schemas/evidence_bundle.schema.json",
+  "title": "Evidence Bundle",
+  "type": "object",
+  "required": ["schema_version", "run_id", "integrity", "artifacts", "violations"],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "run_id": {"type": "string", "minLength": 1},
+    "integrity": {"type": "boolean"},
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["role", "path", "sha256"],
+        "properties": {
+          "role": {"enum": ["input", "response", "trace", "completion"]},
+          "path": {"type": "string"},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "violations": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}
+
