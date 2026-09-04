@@ -80,7 +80,7 @@ def main(argv: list[str] | None = None) -> int:
                 )
                 return 2
             print(
-                "The private beta currently exposes live providers through the API adapter; use 'skillbench demo' for the credential-free workflow.",
+                "Live provider execution is not enabled in this beta; use 'skillbench demo' for the credential-free workflow.",
                 file=sys.stderr,
             )
             return 2

@@ -43,3 +43,25 @@ def test_live_evaluate_explains_missing_provider(public_root, tmp_path, capsys):
     )
     assert code == 2
     assert "Live provider is not configured" in capsys.readouterr().err
+
+
+def test_live_evaluate_explains_beta_boundary(
+    public_root, tmp_path, capsys, monkeypatch
+):
+    monkeypatch.setenv("SKILLBENCH_PROVIDER", "example")
+    skill = public_root / "examples/public_demo/skill"
+    code = main(
+        [
+            "evaluate",
+            "--root",
+            str(public_root),
+            "--skill",
+            str(skill),
+            "--profile",
+            "development",
+            "--output",
+            str(tmp_path),
+        ]
+    )
+    assert code == 2
+    assert "Live provider execution is not enabled in this beta" in capsys.readouterr().err
