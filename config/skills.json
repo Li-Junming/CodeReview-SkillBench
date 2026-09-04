@@ -1,0 +1,12 @@
+{
+  "bundle_id": "public-demo-skill-bundle-v0.1",
+  "schema_version": "0.1",
+  "skills": [
+    {
+      "display_name": "Evidence-first Code Review",
+      "skill_id": "demo-code-review",
+      "skill_path": "examples/public_demo/skill/SKILL.md",
+      "skill_sha256": "82c803d8b42482f481f6044ff8fec0ed0f2eec150ec29d19ee82d19a7b4187ad"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "0.1",
+  "case_id": "DEMO-CONCURRENCY-001",
+  "title": "Concurrent payment creation",
+  "task_type": "read_only_code_review",
+  "language": "python",
+  "prompt_file": "prompt.md",
+  "source_files": [
+    "payment_service.py"
+  ],
+  "expected_output_format": "structured_findings"
+}
+

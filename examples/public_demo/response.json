@@ -1,0 +1,20 @@
+{
+  "summary": "The idempotency check and insert are not atomic, so concurrent retries can create duplicate payments.",
+  "findings": [
+    {
+      "id": "F-001",
+      "severity": "high",
+      "title": "Concurrent requests can bypass the idempotency check",
+      "location": {
+        "path": "payment_service.py",
+        "line_start": 26,
+        "line_end": 36
+      },
+      "evidence": "find_by_request_id is executed separately from save, with no atomic repository operation shown between them.",
+      "impact": "Two requests with the same request_id can both observe no payment and persist separate records, causing duplicate payment creation.",
+      "recommendation": "Enforce a unique constraint on request_id and expose an atomic create-or-return-existing repository operation that handles the uniqueness conflict.",
+      "regression_test": "Start two create_payment calls for the same request_id at a barrier and assert that both return the same persisted payment and only one row exists."
+    }
+  ]
+}
+

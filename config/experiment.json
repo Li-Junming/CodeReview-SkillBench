@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1",
+  "experiment_id": "public-demo-v0.1",
+  "status": "FROZEN",
+  "profile": "development",
+  "case_ids": [
+    "DEMO-CONCURRENCY-001"
+  ],
+  "cases": [
+    {
+      "case_id": "DEMO-CONCURRENCY-001",
+      "candidate_visible_path": "testcases/public/DEMO-CONCURRENCY-001/candidate_visible"
+    }
+  ],
+  "conditions": [
+    "D0",
+    "C_auto",
+    "C_forced"
+  ],
+  "model_profiles": [
+    "offline-reference"
+  ],
+  "repetitions": 1,
+  "frozen_paths": [
+    "testcases/public/DEMO-CONCURRENCY-001/candidate_visible/case.json",
+    "testcases/public/DEMO-CONCURRENCY-001/candidate_visible/prompt.md",
+    "testcases/public/DEMO-CONCURRENCY-001/candidate_visible/payment_service.py",
+    "examples/public_demo/skill/SKILL.md",
+    "examples/public_demo/response.json"
+  ]
+}
+
