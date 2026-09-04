@@ -1,0 +1,14 @@
+{
+  "schema_version": "0.1",
+  "case_id": "DEMO-CONCURRENCY-001",
+  "visibility": "public_demo_reference",
+  "assertions": [
+    {
+      "assertion_id": "A-CONCURRENCY-001",
+      "required_signal": "race",
+      "description": "Identifies that lookup and save are not atomic under concurrent requests.",
+      "weight": 1.0
+    }
+  ]
+}
+

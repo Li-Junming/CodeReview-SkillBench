@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CodeReview SkillBench · Demo Report</title>
+  <style>
+    :root { color-scheme: dark; font-family: Inter, "Segoe UI", sans-serif; background:#07111f; color:#e8f0ff; }
+    * { box-sizing:border-box; } body { margin:0; background:radial-gradient(circle at top right,#12356a 0,#07111f 42%); }
+    main { width:min(1080px,calc(100% - 32px)); margin:0 auto; padding:64px 0 80px; }
+    .eyebrow { color:#5eead4; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+    h1 { margin:.35rem 0; font-size:clamp(2.2rem,6vw,4.5rem); line-height:1; }
+    .boundary { color:#a9bbd6; max-width:760px; line-height:1.7; }
+    .summary { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:34px 0; }
+    .metric,.run-card { border:1px solid #24436c; background:rgba(9,25,47,.82); border-radius:18px; padding:20px; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+    .metric strong { display:block; font-size:2rem; margin-top:8px; }
+    .runs { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .run-head { display:flex; justify-content:space-between; align-items:center; }
+    .condition { color:#7dd3fc; font-family:ui-monospace,monospace; }
+    .verdict { padding:5px 10px; border-radius:999px; font-size:.78rem; font-weight:800; }
+    .verdict-pass { background:#064e3b; color:#6ee7b7; } .verdict-fail { background:#581c1c; color:#fca5a5; }
+    .run-card p { min-height:72px; color:#afc0d8; line-height:1.55; }
+    dl div { display:flex; justify-content:space-between; gap:16px; border-top:1px solid #1d3658; padding:10px 0; }
+    dt { color:#8298b8; } dd { margin:0; text-align:right; font-family:ui-monospace,monospace; font-size:.82rem; }
+    footer { margin-top:32px; color:#7890b2; }
+    @media(max-width:800px) { .summary,.runs { grid-template-columns:1fr 1fr; } }
+    @media(max-width:520px) { .summary,.runs { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body><main>
+  <div class="eyebrow">Evidence-backed evaluation</div>
+  <h1>CodeReview SkillBench</h1>
+  <p class="boundary">演示数据，不代表商业模型排名。该报告用于展示固定资产、运行取证、原子判定、计分资格与责任归因链路。</p>
+  <section class="summary">
+    <div class="metric">Total<strong>3</strong></div>
+    <div class="metric">Eligible<strong>3</strong></div>
+    <div class="metric">Passed<strong>1</strong></div>
+    <div class="metric">Pass rate<strong>33.3%</strong></div>
+  </section>
+  <section class="runs">
+            <article class="run-card">
+              <div class="run-head">
+                <span class="condition">C_auto</span>
+                <span class="verdict verdict-fail">FAIL</span>
+              </div>
+              <h3>DEMO-CONCURRENCY-001</h3>
+              <p>No correctness defects were identified.</p>
+              <dl>
+                <div><dt>Qualification</dt><dd>QUALIFIED</dd></div>
+                <div><dt>Attribution</dt><dd>VALID_MODEL_FAILURE</dd></div>
+                <div><dt>Evidence</dt><dd>verified</dd></div>
+              </dl>
+            </article>
+            
+            <article class="run-card">
+              <div class="run-head">
+                <span class="condition">C_forced</span>
+                <span class="verdict verdict-pass">PASS</span>
+              </div>
+              <h3>DEMO-CONCURRENCY-001</h3>
+              <p>The idempotency check and insert are not atomic, so concurrent retries can create duplicate payments.</p>
+              <dl>
+                <div><dt>Qualification</dt><dd>QUALIFIED</dd></div>
+                <div><dt>Attribution</dt><dd>NONE</dd></div>
+                <div><dt>Evidence</dt><dd>verified</dd></div>
+              </dl>
+            </article>
+            
+            <article class="run-card">
+              <div class="run-head">
+                <span class="condition">D0</span>
+                <span class="verdict verdict-fail">FAIL</span>
+              </div>
+              <h3>DEMO-CONCURRENCY-001</h3>
+              <p>No correctness defects were identified.</p>
+              <dl>
+                <div><dt>Qualification</dt><dd>QUALIFIED</dd></div>
+                <div><dt>Attribution</dt><dd>VALID_MODEL_FAILURE</dd></div>
+                <div><dt>Evidence</dt><dd>verified</dd></div>
+              </dl>
+            </article>
+            </section>
+  <footer>Generated deterministically from the public offline demo.</footer>
+</main></body></html>

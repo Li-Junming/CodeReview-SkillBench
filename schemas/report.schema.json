@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Li-Junming/CodeReview-SkillBench/schemas/report.schema.json",
+  "title": "CodeReview SkillBench Report",
+  "type": "object",
+  "required": ["schema_version", "report_type", "claim_boundary", "summary", "runs"],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "report_type": {"enum": ["PUBLIC_OFFLINE_DEMO", "DEVELOPMENT_EVALUATION"]},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "summary": {
+      "type": "object",
+      "required": ["eligible_runs", "passed_runs", "pass_rate", "total_runs"],
+      "properties": {
+        "eligible_runs": {"type": "integer", "minimum": 0},
+        "passed_runs": {"type": "integer", "minimum": 0},
+        "pass_rate": {"type": "number", "minimum": 0, "maximum": 1},
+        "total_runs": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "runs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["run_id", "case_id", "condition", "model_profile", "response_summary", "judge_results", "qualification", "attribution", "evidence"],
+        "properties": {
+          "run_id": {"type": "string"},
+          "case_id": {"type": "string"},
+          "condition": {"enum": ["D0", "C_auto", "C_forced"]},
+          "model_profile": {"type": "string"},
+          "response_summary": {"type": "string"},
+          "judge_results": {"type": "array"},
+          "qualification": {"type": "object"},
+          "attribution": {"type": "object"},
+          "evidence": {"type": "object"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+

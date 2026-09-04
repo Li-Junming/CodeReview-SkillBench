@@ -1,0 +1,173 @@
+{
+  "claim_boundary": "演示数据，不代表商业模型排名",
+  "report_type": "PUBLIC_OFFLINE_DEMO",
+  "runs": [
+    {
+      "attribution": {
+        "first_deviation": "outcome_ok",
+        "root_cause": "VALID_MODEL_FAILURE"
+      },
+      "case_id": "DEMO-CONCURRENCY-001",
+      "condition": "C_auto",
+      "evidence": {
+        "artifacts": [
+          {
+            "path": "input.json",
+            "role": "input",
+            "sha256": "546f7ba0ecd04e13c1887b4f531f112552107cca05349d16f65e92666f4a6cfa"
+          },
+          {
+            "path": "response.json",
+            "role": "response",
+            "sha256": "2fd72c72d5fadc673db54ef15972fbd28f33f4cbada4435d6525c43c76542683"
+          },
+          {
+            "path": "trace.json",
+            "role": "trace",
+            "sha256": "0b475c7ef2c890f494a45e9ef00f97cd3b11cccc21c4861681b35747a06da1f9"
+          },
+          {
+            "path": "completion.json",
+            "role": "completion",
+            "sha256": "a7eeda41ae506e30c9519b79dbcf3b803ce9df009b9f2aa94eb00db8df40ae73"
+          }
+        ],
+        "integrity": true,
+        "run_id": "DEMO-CONCURRENCY-001__demo-code-review__C_auto__offline-reference__R1",
+        "schema_version": "0.1",
+        "violations": []
+      },
+      "judge_results": [
+        {
+          "assertion_id": "A-CONCURRENCY-001",
+          "evidence_refs": [
+            "source:payment_service.py#L26-L36"
+          ],
+          "reason": "No structured finding was provided.",
+          "verdict": "FAIL"
+        }
+      ],
+      "model_profile": "offline-reference",
+      "qualification": {
+        "reason": "QUALIFIED",
+        "scoring_eligible": true
+      },
+      "response_summary": "No correctness defects were identified.",
+      "run_id": "DEMO-CONCURRENCY-001__demo-code-review__C_auto__offline-reference__R1"
+    },
+    {
+      "attribution": {
+        "first_deviation": null,
+        "root_cause": null
+      },
+      "case_id": "DEMO-CONCURRENCY-001",
+      "condition": "C_forced",
+      "evidence": {
+        "artifacts": [
+          {
+            "path": "input.json",
+            "role": "input",
+            "sha256": "8cfb0e5f8e79da3dee5c0d6da8c4a185c5bc353820bf3baa374a52cf38ad374d"
+          },
+          {
+            "path": "response.json",
+            "role": "response",
+            "sha256": "7f3ce5912fc7cd3c7e779924b6279043872fe111755cf79e4b862a2027fe5d31"
+          },
+          {
+            "path": "trace.json",
+            "role": "trace",
+            "sha256": "95d4aab79b45042f27f36a7799d9604ee7b5b2eda7c61f9c694d9a1c9af828bd"
+          },
+          {
+            "path": "completion.json",
+            "role": "completion",
+            "sha256": "9dbc081682321a3dcf8b7061e4e42e964180528ecc30aab22b38f602ba13c5fd"
+          }
+        ],
+        "integrity": true,
+        "run_id": "DEMO-CONCURRENCY-001__demo-code-review__C_forced__offline-reference__R1",
+        "schema_version": "0.1",
+        "violations": []
+      },
+      "judge_results": [
+        {
+          "assertion_id": "A-CONCURRENCY-001",
+          "evidence_refs": [
+            "response:findings/0",
+            "source:payment_service.py#L26-L36"
+          ],
+          "reason": "A structured finding contains the required 'race' signal.",
+          "verdict": "PASS"
+        }
+      ],
+      "model_profile": "offline-reference",
+      "qualification": {
+        "reason": "QUALIFIED",
+        "scoring_eligible": true
+      },
+      "response_summary": "The idempotency check and insert are not atomic, so concurrent retries can create duplicate payments.",
+      "run_id": "DEMO-CONCURRENCY-001__demo-code-review__C_forced__offline-reference__R1"
+    },
+    {
+      "attribution": {
+        "first_deviation": "outcome_ok",
+        "root_cause": "VALID_MODEL_FAILURE"
+      },
+      "case_id": "DEMO-CONCURRENCY-001",
+      "condition": "D0",
+      "evidence": {
+        "artifacts": [
+          {
+            "path": "input.json",
+            "role": "input",
+            "sha256": "43661ed65b012e2e8f21f6faf33644ae215c6c8adfbf306dbca0aeaeba611a17"
+          },
+          {
+            "path": "response.json",
+            "role": "response",
+            "sha256": "2fd72c72d5fadc673db54ef15972fbd28f33f4cbada4435d6525c43c76542683"
+          },
+          {
+            "path": "trace.json",
+            "role": "trace",
+            "sha256": "25a67ae8e9923eec7bfadf117152c33850f5d00e7a893b3a9a94e505561b2ce4"
+          },
+          {
+            "path": "completion.json",
+            "role": "completion",
+            "sha256": "2bd491473b9dc09be3f3956442e8cec19fd6b8585cea0a25a73e03e1b08d848d"
+          }
+        ],
+        "integrity": true,
+        "run_id": "DEMO-CONCURRENCY-001__demo-code-review__D0__offline-reference__R1",
+        "schema_version": "0.1",
+        "violations": []
+      },
+      "judge_results": [
+        {
+          "assertion_id": "A-CONCURRENCY-001",
+          "evidence_refs": [
+            "source:payment_service.py#L26-L36"
+          ],
+          "reason": "No structured finding was provided.",
+          "verdict": "FAIL"
+        }
+      ],
+      "model_profile": "offline-reference",
+      "qualification": {
+        "reason": "QUALIFIED",
+        "scoring_eligible": true
+      },
+      "response_summary": "No correctness defects were identified.",
+      "run_id": "DEMO-CONCURRENCY-001__demo-code-review__D0__offline-reference__R1"
+    }
+  ],
+  "schema_version": "0.1",
+  "summary": {
+    "eligible_runs": 3,
+    "pass_rate": 0.3333333333333333,
+    "passed_runs": 1,
+    "total_runs": 3
+  }
+}

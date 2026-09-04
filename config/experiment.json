@@ -9,7 +9,8 @@
   "cases": [
     {
       "case_id": "DEMO-CONCURRENCY-001",
-      "candidate_visible_path": "testcases/public/DEMO-CONCURRENCY-001/candidate_visible"
+      "candidate_visible_path": "testcases/public/DEMO-CONCURRENCY-001/candidate_visible",
+      "rubric_path": "testcases/public/DEMO-CONCURRENCY-001/reference/rubric.json"
     }
   ],
   "conditions": [
@@ -25,8 +26,9 @@
     "testcases/public/DEMO-CONCURRENCY-001/candidate_visible/case.json",
     "testcases/public/DEMO-CONCURRENCY-001/candidate_visible/prompt.md",
     "testcases/public/DEMO-CONCURRENCY-001/candidate_visible/payment_service.py",
+    "testcases/public/DEMO-CONCURRENCY-001/reference/rubric.json",
     "examples/public_demo/skill/SKILL.md",
-    "examples/public_demo/response.json"
+    "examples/public_demo/response.json",
+    "examples/public_demo/missed_response.json"
   ]
 }
-

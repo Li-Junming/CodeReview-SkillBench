@@ -14,6 +14,8 @@ _CAUSAL_ORDER = (
 
 def first_deviation(signals: dict[str, Any]) -> dict[str, Any]:
     for field, root_cause, default in _CAUSAL_ORDER:
+        if field == "skill_loaded" and not signals.get("skill_required", True):
+            continue
         if not signals.get(field, default):
             return {"root_cause": root_cause, "first_deviation": field}
     return {"root_cause": None, "first_deviation": None}

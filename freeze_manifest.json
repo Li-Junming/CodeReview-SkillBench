@@ -1,11 +1,13 @@
 {
   "experiment_id": "public-demo-v0.1",
   "files": {
+    "examples/public_demo/missed_response.json": "209097e22e4f335ab8efaa02ad0c8b2fc24598c9b6cdde7be82009222fdf74b2",
     "examples/public_demo/response.json": "ab8b207318d7b988f0b20874231843f06b8dfdd7377761eddf53e5a5a7165943",
     "examples/public_demo/skill/SKILL.md": "82c803d8b42482f481f6044ff8fec0ed0f2eec150ec29d19ee82d19a7b4187ad",
     "testcases/public/DEMO-CONCURRENCY-001/candidate_visible/case.json": "6eeb10dc2db748e5c5e609c7659a544d6b39596ce9ff15556a0ca0d2f1af3530",
     "testcases/public/DEMO-CONCURRENCY-001/candidate_visible/payment_service.py": "b42eb97ccaae707a5081e5c02136726e58b5413c4649f74800293aba125ce672",
-    "testcases/public/DEMO-CONCURRENCY-001/candidate_visible/prompt.md": "0609b9d5ac64fe70805fe7778eff92bc6d8e068734c0853de05442ad321f7d56"
+    "testcases/public/DEMO-CONCURRENCY-001/candidate_visible/prompt.md": "0609b9d5ac64fe70805fe7778eff92bc6d8e068734c0853de05442ad321f7d56",
+    "testcases/public/DEMO-CONCURRENCY-001/reference/rubric.json": "030a855b4fa9a6b08054bad639450756d8b570a14ec1047bf7edad8eae66982e"
   },
   "schema_version": "0.1",
   "skill_bundle_id": "public-demo-skill-bundle-v0.1",
