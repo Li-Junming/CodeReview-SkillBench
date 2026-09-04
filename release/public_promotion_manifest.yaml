@@ -50,6 +50,7 @@ always_denied:
 ignored_local_only:
   - .git
   - .git/**
+  - .skillbench-data/**
   - .worktrees/**
   - .venv/**
   - .uv-cache/**

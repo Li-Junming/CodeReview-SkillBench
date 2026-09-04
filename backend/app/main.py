@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from fastapi import FastAPI, File, HTTPException, Query, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 
 from backend.app.models import HealthResponse, RunRecord, RunRequest, SkillRecord
@@ -30,6 +31,12 @@ def create_app(
     app = FastAPI(title="CodeReview SkillBench API", version="0.1.0-beta")
     app.state.data_root = (data_root or default_data_root()).resolve()
     app.state.project_root = (project_root or default_project_root()).resolve()
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["http://127.0.0.1:3000", "http://localhost:3000"],
+        allow_methods=["GET", "POST", "OPTIONS"],
+        allow_headers=["Content-Type"],
+    )
 
     @app.get("/api/health", response_model=HealthResponse)
     def health() -> HealthResponse:

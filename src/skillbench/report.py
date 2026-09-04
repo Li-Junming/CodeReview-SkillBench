@@ -165,7 +165,16 @@ def write_reports(
     except (FileNotFoundError, KeyError, ValueError):
         asset_ok = False
 
-    run_dirs = sorted(path.parent for path in run_root.glob("*/completion.json"))
+    condition_order = {condition: index for index, condition in enumerate(
+        load_json(root / "config" / "experiment.json")["conditions"]
+    )}
+    run_dirs = [path.parent for path in run_root.glob("*/completion.json")]
+    run_dirs.sort(
+        key=lambda path: (
+            condition_order.get(load_json(path / "completion.json")["condition"], 999),
+            path.name,
+        )
+    )
     runs = [_evaluate_run(root, run_dir, asset_ok) for run_dir in run_dirs]
     eligible = [run for run in runs if run["qualification"]["scoring_eligible"]]
     passed = [
@@ -191,4 +200,3 @@ def write_reports(
     write_json(json_path, report)
     html_path.write_text(_render_html(report), encoding="utf-8")
     return json_path, html_path
-

@@ -37,6 +37,11 @@ def test_report_is_schema_valid_and_html_is_self_contained(public_root, tmp_path
         "pass_rate": 1 / 3,
         "total_runs": 3,
     }
+    assert [run["condition"] for run in report["runs"]] == [
+        "D0",
+        "C_auto",
+        "C_forced",
+    ]
     html = html_path.read_text(encoding="utf-8")
     assert "<html" in html.lower()
     assert "CodeReview SkillBench" in html
