@@ -1,0 +1,61 @@
+schema_version: "1.0"
+release_target: "v0.1.0-beta"
+mode: allowlist
+default_action: deny
+
+allowed_now:
+  - .gitignore
+  - pyproject.toml
+  - README.md
+  - CONTRIBUTING.md
+  - SECURITY.md
+  - CHANGELOG.md
+  - THIRD_PARTY_NOTICES.md
+  - LICENSE
+  - LICENSE待确认.md
+  - .github/workflows/**
+  - backend/**
+  - config/**
+  - docs/**
+  - examples/public_demo/**
+  - freeze_manifest.json
+  - frontend/**
+  - protocols/**
+  - release/**
+  - reports/sample/**
+  - schemas/**
+  - scripts/**
+  - src/skillbench/**
+  - testcases/public/**
+  - tests/public/**
+
+always_denied:
+  - internal/**
+  - private/**
+  - holdout/**
+  - evaluator_only/**
+  - testcases/**/evaluator_only/**
+  - runs/**
+  - source_snapshot/**
+  - "**/*answer_key*"
+  - "**/*raw_transcript*"
+  - "**/eval-secrets.ps1"
+  - "**/*.env"
+  - "**/.env.local"
+  - "**/.env.development"
+  - "**/.env.production"
+  - "**/.env.test"
+  - "**/.env.*.local"
+
+ignored_local_only:
+  - .git
+  - .git/**
+  - .worktrees/**
+  - .venv/**
+  - .uv-cache/**
+  - .pytest_cache/**
+  - "**/__pycache__/**"
+  - "**/*.pyc"
+  - build/**
+  - frontend/node_modules/**
+  - frontend/.next/**
